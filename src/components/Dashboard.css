@@ -1,0 +1,63 @@
+/* src/components/Dashboard.css */
+
+.dashboard {
+  padding: 20px;
+  border-radius: 15px; /* More pronounced rounded corners for a modern look */
+}
+
+/* Title styling */
+.dashboard h1 {
+  color: #333; /* Neutral dark color for the main title */
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better readability */
+}
+
+/* Grid layout for dashboard sections */
+.dashboard-sections {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns grid */
+  grid-gap: 20px; /* Space between grid items */
+  justify-items: stretch; /* Stretch items to fill the grid cells */
+}
+
+/* Section styles */
+.dashboard-sections > div {
+  background: rgba(255, 255, 255, 0.001); /* Light glassy effect for each section */
+  padding: 20px;
+  border-radius: 15px; /* Rounded corners for a smoother look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  position: relative;
+  z-index: 1;
+  overflow: hidden; /* Ensures that content doesn't spill over the rounded corners */
+  backdrop-filter: blur(8px); /* Frosted glass effect for sections */
+  -webkit-backdrop-filter: blur(8px); /* Safari compatibility */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for separation */
+}
+
+/* Hover effects for sections */
+.dashboard-sections > div:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+  z-index: 2; /* Ensures the hovered section stays above others */
+}
+
+/* Text styling within sections */
+.dashboard-sections > div h2 {
+  color: #333; /* Neutral dark text color for readability against the light glassy background */
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for better contrast */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-sections {
+    grid-template-columns: 1fr; /* Single column grid on smaller screens */
+  }
+
+  .dashboard h1 {
+    font-size: 2rem; /* Smaller title size for mobile */
+  }
+}

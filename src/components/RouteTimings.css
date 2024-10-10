@@ -1,0 +1,17 @@
+/* src/components/RouteTimings.css */
+.route-timings {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .route-list button {
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .route-details {
+    margin-top: 20px;
+  }
+  

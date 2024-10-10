@@ -1,0 +1,132 @@
+/* src/components/RouteManagement.css */
+
+.route-management {
+  background-color: rgba(255, 255, 255, 0.9); /* Light transparent white background for glass effect */
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 700px; /* Adjust width for consistency */
+  margin: 30px auto; /* Center the component on the page */
+  font-family: 'Helvetica Neue', sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1.2s ease-out; /* Smooth fade-in effect on load */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.route-management h2 {
+  color: #FF9933; /* Saffron color for title */
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+}
+
+.route-management h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #138808; /* Green underline */
+  margin: 8px auto 0;
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+.main-button {
+  padding: 10px 16px;
+  background-color: #138808; /* Green button color */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin: 10px 5px;
+}
+
+.main-button:hover {
+  background-color: navy; /* Darker green on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.small-button {
+  padding: 8px 12px;
+  background-color: #FF9933; /* Saffron color for delete button */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.small-button:hover {
+  background-color: #e65c00; /* Darker saffron on hover */
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.file-input {
+  margin: 10px 5px;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.file-input:focus {
+  border-color: #42a5f5; /* Bright blue border on focus */
+  outline: none;
+  box-shadow: 0 0 10px rgba(66, 165, 245, 0.3); /* Subtle blue shadow */
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .route-management {
+    padding: 20px;
+  }
+
+  .route-management h2 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-button,
+  .file-input {
+    width: 100%;
+  }
+}

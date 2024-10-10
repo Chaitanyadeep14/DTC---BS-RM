@@ -1,0 +1,55 @@
+/* src/components/NewsTicker.css */
+
+/* Styles for the news ticker container */
+.news-ticker {
+  background: linear-gradient(to right, #FF9933, #FFFFFF, #138808); /* Gradient for Indian flag colors */
+  color: #fff; /* White text for visibility */
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border for separation */
+  position: relative;
+  z-index: 1000; /* Ensures the ticker is above other content */
+  margin-bottom: 20px; /* Spacing below the ticker */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+  background-color: rgba(255, 255, 255, 0.3); /* Transparent background for glass effect */
+}
+
+/* Wrapper for the scrolling effect */
+.ticker-wrapper {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Styles for the ticker content */
+.ticker {
+  display: flex;
+  animation: scroll 20s linear infinite; /* Smooth scrolling animation */
+}
+
+/* Styles for each individual news item */
+.ticker-item {
+  display: inline-block;
+  padding: 0 30px;
+  font-size: 16px;
+  text-align: center;
+  color: #000; /* Black text for better contrast on gradient */
+}
+
+/* Pause the scrolling animation on hover */
+.ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Keyframes for the scrolling animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+    transform: translateX(-100%); /* End at the left */
+  }
+}

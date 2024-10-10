@@ -1,0 +1,146 @@
+/* src/components/PassengerFeedback.css */
+
+.passenger-feedback {
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for a clean look */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 30px auto; /* Center the component on the page */
+  font-family: 'Helvetica Neue', sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-out; /* Smooth fade-in effect on load */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.passenger-feedback h2 {
+  color: #FF9933; /* Saffron color for the title */
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+}
+
+.passenger-feedback h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #138808; /* Green underline */
+  margin: 8px auto 0;
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+/* Form and textarea styling */
+.passenger-feedback form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInForm 1.2s ease-out; /* Animation for form appearance */
+}
+
+@keyframes fadeInForm {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.passenger-feedback textarea {
+  margin-bottom: 15px;
+  padding: 15px;
+  resize: none;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  width: 100%;
+  max-width: 500px;
+  min-height: 150px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+}
+
+.passenger-feedback textarea:focus {
+  outline: none;
+  border-color: #FF9933; /* Saffron border on focus */
+  box-shadow: 0 0 10px rgba(255, 153, 51, 0.3); /* Saffron shadow */
+}
+
+/* Button styling */
+.passenger-feedback button {
+  padding: 12px 20px;
+  cursor: pointer;
+  background-color: #138808; /* Green button for actions */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin: 15px 5px;
+}
+
+.passenger-feedback button:hover {
+  background-color: #FF9933; /* Darker green on hover */
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Thank-you message styling */
+.thank-you-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInMessage 1s ease-out; /* Animation for thank-you message appearance */
+}
+
+@keyframes fadeInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .passenger-feedback {
+    padding: 20px;
+  }
+
+  .passenger-feedback h2 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .passenger-feedback textarea {
+    min-height: 100px; /* Adjust textarea height for smaller screens */
+  }
+}

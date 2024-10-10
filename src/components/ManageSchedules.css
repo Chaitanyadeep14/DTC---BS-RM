@@ -1,0 +1,149 @@
+/* src/components/ManageSchedules.css */
+
+.manage-schedules {
+  padding: 30px;
+  background-color: #ffffff; /* White background for a clean look */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 30px auto; /* Center the component on the page */
+  font-family: 'Helvetica Neue', sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-out; /* Smooth fade-in effect on load */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.manage-schedules h2 {
+  color: #2c3e50; /* Dark navy blue for title */
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+}
+
+.manage-schedules h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #ff5722; /* Vivid orange for underline */
+  margin: 8px auto 0;
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+.schedule-list {
+  margin-bottom: 20px;
+  max-height: 300px; /* Added max-height for scrollable area */
+  overflow-y: auto; /* Makes schedule list scrollable if it overflows */
+  padding-right: 10px;
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #f8f9fa;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  animation: fadeInItem 0.5s ease-out; /* Smooth fade-in effect for each item */
+}
+
+@keyframes fadeInItem {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.schedule-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Hover effect with elevation */
+}
+
+.add-schedule {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.add-schedule input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+}
+
+.add-schedule input:focus {
+  outline: none;
+  border-color: #42a5f5; /* Bright blue border on focus */
+  box-shadow: 0 0 10px rgba(66, 165, 245, 0.3); /* Subtle blue shadow */
+}
+
+.add-schedule button {
+  padding: 12px 20px;
+  background-color: #8bc34a; /* Light green button for actions */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.add-schedule button:hover {
+  background-color: #7cb342; /* Slightly darker green on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Hover effect with elevation */
+}
+
+@media (max-width: 600px) {
+  .manage-schedules {
+    padding: 20px;
+  }
+
+  .manage-schedules h2 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .add-schedule {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .add-schedule input,
+  .add-schedule button {
+    width: 100%; /* Full width for inputs and buttons on smaller screens */
+  }
+}

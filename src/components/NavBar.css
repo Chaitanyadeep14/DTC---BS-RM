@@ -1,0 +1,67 @@
+/* src/components/NavBar.css */
+
+/* General navbar styling */
+.navbar {
+  background-color: #FF9933; /* Saffron color for the Indian flag */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+  width: 90%;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a light shadow for depth */
+  position: relative;
+  z-index: 5; /* Ensures the navbar is above the main content */
+}
+
+/* Navbar list styling */
+.navbar ul {
+  list-style-type: none; /* Removes bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centers the list items */
+}
+
+/* Navbar list item styling */
+.navbar ul li {
+  margin: 0 15px; /* Adds spacing between the list items */
+}
+
+/* Link styling */
+.navbar ul li a {
+  text-decoration: none; /* Removes underline from links */
+  color: #FFFFFF; /* White text for contrast against saffron background */
+  font-weight: bold; /* Bold text for emphasis */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+  padding: 8px 16px; /* Adds padding for better spacing and clickability */
+  border-radius: 20px; /* Rounded corners for a softer look */
+}
+
+/* Active link styling */
+.navbar ul li a.active {
+  background-color: #138808; /* Green background for the active link */
+  color: #FFFFFF; /* White text for readability */
+}
+
+/* Hover effects for links */
+.navbar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* Slight white background on hover */
+  color: navy; /* Green text color on hover */
+  border: 1px solid #138808; /* Green border for hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+
+  .navbar ul li {
+    margin: 10px 0; /* Adds spacing between stacked items */
+  }
+
+  .navbar ul li a {
+    padding: 10px 20px; /* Increases padding for better touch targets */
+  }
+}

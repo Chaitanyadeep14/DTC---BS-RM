@@ -1,0 +1,132 @@
+/* src/components/Reports.css */
+
+.reports {
+  padding: 30px;
+  background-color: #ffffff; /* White background for a clean look */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 30px auto; /* Center the component on the page */
+  font-family: 'Helvetica Neue', sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-out; /* Smooth fade-in effect on load */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reports h2 {
+  color: #2c3e50; /* Dark navy blue for title */
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+}
+
+.reports h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #ff5722; /* Vivid orange for underline */
+  margin: 8px auto 0;
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.filters select,
+.filters input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  background-color: #f8f9fa;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filters select:focus,
+.filters input:focus {
+  outline: none;
+  border-color: #42a5f5; /* Bright blue border on focus */
+  box-shadow: 0 0 10px rgba(66, 165, 245, 0.3); /* Subtle blue shadow */
+}
+
+.chart-container {
+  width: 100%;
+  height: 400px; /* Ensures enough height for the chart */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInChart 1.2s ease-out; /* Animation for chart appearance */
+}
+
+@keyframes fadeInChart {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+button {
+  padding: 12px 20px;
+  background-color: #8bc34a; /* Light green button for actions */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #7cb342; /* Slightly darker green on hover */
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .reports h2 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .chart-container {
+    height: 300px; /* Adjust chart height for smaller screens */
+  }
+}

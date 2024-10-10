@@ -1,0 +1,213 @@
+/* src/components/LinkedDutySchedule.css */
+
+.linked-duty-schedule {
+  background-color: white; /* Pure white background for a clean look */
+  padding: 15px; /* Reduced padding */
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 900px; /* Increased width to accommodate larger calendar */
+  margin: 20px auto; /* Reduced margin */
+  font-family: 'Helvetica Neue', sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1.2s ease-out; /* Smooth fade-in effect on load */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.linked-duty-schedule h2 {
+  color: #FF9933; /* Saffron color for the title */
+  font-size: 1.8rem; /* Reduced font size */
+  margin-bottom: 10px; /* Reduced margin */
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+.linked-duty-schedule h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 5px;
+  background-color: #138808; /* Green underline */
+  margin: 5px auto 0; /* Reduced margin */
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+.linked-duty-schedule .form-group {
+  display: flex;
+  gap: 8px; /* Decreased gap for more compact layout */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: center; /* Center input fields */
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+.linked-duty-schedule input {
+  flex: 1 1 45%; /* Flex-grow and shrink with a base width */
+  padding: 8px; /* Reduced padding for more compact size */
+  border: 1.5px solid #e0e0e0; /* Thinner border */
+  border-radius: 6px; /* Slightly smaller radius */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 0.9rem; /* Slightly smaller font size */
+  background-color: white; /* White background for inputs */
+}
+
+.linked-duty-schedule input:focus {
+  border-color: #0000ff; /* Blue border on focus */
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.2); /* Subtle blue shadow */
+}
+
+.linked-duty-schedule button {
+  padding: 8px 16px; /* Reduced padding */
+  background-color: #138808; /* Green button color */
+  color: white;
+  border: none;
+  border-radius: 6px; /* Smaller radius */
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem; /* Reduced font size */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin: 10px 0; /* Reduced margin */
+  display: block;
+  width: 100%;
+}
+
+.linked-duty-schedule button:hover {
+  background-color: #FF9933; /* Darker green on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.schedule-list {
+  margin-top: 10px; /* Reduced margin */
+  max-height: 100px; /* Reduced height */
+  overflow-y: auto; /* Add scroll if content exceeds the max-height */
+  position: relative;
+  animation: listFadeIn 1.2s ease-out;
+}
+
+@keyframes listFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.schedule-list div {
+  background-color: transparent; /* Saffron color for list items */
+  padding: 8px; /* Reduced padding */
+  border-radius: 8px; /* Slightly smaller radius */
+  margin-bottom: 8px; /* Reduced margin */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  font-size: 0.85rem; /* Reduced font size */
+  color: black; /* White text color for contrast */
+}
+
+.schedule-list div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-list button {
+  background-color: #138808; /* Saffron color for delete action */
+  color: white;
+  border: none;
+  border-radius: 6px; /* Smaller radius */
+  cursor: pointer;
+  margin-left: 5px; /* Reduced margin */
+  padding: 4px 8px; /* Reduced padding for smaller size */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: auto; /* Auto width for compact size */
+}
+
+.schedule-list button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.calendar-view {
+  margin-top: 20px; /* Adjust margin for better spacing */
+  height: 600px; /* Increased height for emphasis */
+  width: 100%; /* Full width */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Styles for linear button alignment */
+.calendar-controls {
+  display: flex;
+  justify-content: center; /* Center controls horizontally */
+  gap: 8px; /* Space between buttons */
+  margin-top: 15px;
+  flex-wrap: wrap; /* Wrap buttons to next line on smaller screens */
+}
+
+.calendar-controls button {
+  background-color: #ffffff; /* White background for contrast */
+  color: #000000; /* Black text color for readability */
+  border: 1px solid #e0e0e0; /* Light border */
+  padding: 8px 12px; /* Padding for buttons */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.calendar-controls button:hover {
+  background-color: #f2f2f2; /* Slightly darker on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+  .linked-duty-schedule .form-group {
+    flex-direction: column; /* Stack inputs vertically on smaller screens */
+  }
+
+  .linked-duty-schedule input {
+    width: 100%;
+    margin-bottom: 8px; /* Reduced margin for mobile view */
+  }
+
+  .schedule-list div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .schedule-list button {
+    margin-top: 8px;
+    margin-left: 0;
+  }
+
+  .calendar-controls {
+    flex-direction: column; /* Stack controls vertically on smaller screens */
+  }
+}

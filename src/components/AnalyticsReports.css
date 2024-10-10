@@ -1,0 +1,102 @@
+/* src/components/AnalyticsReports.css */
+
+.analytics-reports {
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9); /* Light transparent white background for glass effect */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 850px;
+  margin: 30px auto; /* Center the component on the page */
+  font-family: 'Helvetica Neue', sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-out; /* Smooth fade-in effect on load */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.analytics-reports h2 {
+  color: #FF9933; /* Saffron color for title */
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+}
+
+.analytics-reports h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #138808; /* Green underline */
+  margin: 8px auto 0;
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.chart {
+  width: 100%;
+  max-width: 400px; /* Adjust size for responsiveness */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background for charts */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInChart 1s ease-out; /* Smooth fade-in effect for each chart */
+}
+
+@keyframes fadeInChart {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.chart:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Elevation effect on hover */
+}
+
+@media (max-width: 600px) {
+  .analytics-reports {
+    padding: 20px;
+  }
+
+  .analytics-reports h2 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .chart {
+    max-width: 100%; /* Full width for charts on smaller screens */
+  }
+}

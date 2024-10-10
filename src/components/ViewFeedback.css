@@ -1,0 +1,106 @@
+/* src/components/ViewFeedback.css */
+
+.view-feedback {
+  padding: 30px;
+  background-color: #ffffff; /* White background for a clean look */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 30px auto; /* Center the component on the page */
+  font-family: 'Helvetica Neue', sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-out; /* Smooth fade-in effect on load */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.view-feedback h2 {
+  color: #2c3e50; /* Dark navy blue for title */
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+}
+
+.view-feedback h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #ff5722; /* Vivid orange for underline */
+  margin: 8px auto 0;
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+.feedback-list {
+  margin-top: 20px;
+  max-height: 300px; /* Added max-height for scrollable area */
+  overflow-y: auto; /* Makes feedback list scrollable if it overflows */
+  padding-right: 10px;
+}
+
+.feedback-item {
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  animation: fadeInItem 0.5s ease-out; /* Smooth fade-in effect for each item */
+}
+
+@keyframes fadeInItem {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.feedback-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Hover effect with elevation */
+}
+
+.no-feedback {
+  text-align: center;
+  color: #757575; /* Grey color for no feedback message */
+  font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .view-feedback {
+    padding: 20px;
+  }
+
+  .view-feedback h2 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .feedback-item {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+}

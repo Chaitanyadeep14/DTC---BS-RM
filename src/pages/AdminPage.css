@@ -1,0 +1,137 @@
+/* src/pages/AdminPage.css */
+
+.admin-page {
+  padding: 20px;
+  background-color: transparent; /* Semi-transparent white for a clean look */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 30px auto;
+  font-family: 'Helvetica Neue', sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-out; /* Smooth fade-in effect on load */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navigation Styles for Admin Page */
+.admin-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; /* Increased gap for better spacing */
+  margin-bottom: 20px;
+}
+
+.admin-nav button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff; /* White for button background */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Circular shape */
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-nav button:hover {
+  background-color: navy; /* Saffron color on hover */
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.admin-nav button:focus {
+  outline: none;
+  border: 2px solid #138808; /* Green color on focus */
+}
+
+.admin-nav button .fa-icon {
+  font-size: 1.5rem; /* Increased icon size */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Indian flag colors for each icon */
+.admin-nav button:nth-child(1) .fa-icon {
+  color: #FF9933; /* Saffron */
+}
+
+.admin-nav button:nth-child(2) .fa-icon {
+  color: #138808; /* White */
+}
+
+.admin-nav button:nth-child(3) .fa-icon {
+  color: #FF9933; /* Green */
+}
+
+.admin-nav button:nth-child(4) .fa-icon {
+  color: #138808; /* Saffron */
+}
+
+.admin-nav button:nth-child(5) .fa-icon {
+  color: #FF9933; /* White */
+}
+
+.admin-nav button:nth-child(6) .fa-icon {
+  color: #138808; /* Green */
+}
+
+.admin-nav button:hover .fa-icon {
+  color: #FF9933; /* White icon color on hover for all buttons */
+}
+
+.admin-content {
+  margin-top: 20px;
+  animation: fadeInContent 1s ease-out; /* Smooth fade-in effect for content */
+}
+
+/* Fade-in content animation */
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .admin-page {
+    padding: 15px;
+  }
+
+  .admin-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .admin-nav button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .admin-content {
+    margin-top: 10px;
+  }
+}

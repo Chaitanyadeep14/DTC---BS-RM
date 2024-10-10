@@ -1,0 +1,120 @@
+/* src/components/UserManagement.css */
+
+.user-management {
+  padding: 30px;
+  background-color: #ffffff; /* White background for a clean look */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 30px auto; /* Center the component on the page */
+  font-family: 'Helvetica Neue', sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-out; /* Smooth fade-in effect on load */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-management h2 {
+  color: #2c3e50; /* Dark navy blue for title */
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+}
+
+.user-management h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #ff5722; /* Vivid orange for underline */
+  margin: 8px auto 0;
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+.user-list {
+  margin-top: 20px;
+  max-height: 300px; /* Added max-height for scrollable area */
+  overflow-y: auto; /* Makes user list scrollable if it overflows */
+  padding-right: 10px;
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #f8f9fa;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  animation: fadeInItem 0.5s ease-out; /* Smooth fade-in effect for each item */
+}
+
+@keyframes fadeInItem {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.user-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Hover effect with elevation */
+}
+
+.user-item button {
+  padding: 8px 12px;
+  background-color: #ff5252; /* Bright red for delete button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  font-weight: bold;
+}
+
+.user-item button:hover {
+  background-color: #e53935; /* Darker red on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Hover effect with elevation */
+}
+
+@media (max-width: 600px) {
+  .user-management {
+    padding: 20px;
+  }
+
+  .user-management h2 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .user-item {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+}

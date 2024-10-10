@@ -1,0 +1,176 @@
+/* src/components/UnlinkedDutySchedule.css */
+
+.unlinked-duty-schedule {
+  background-color: #ffffff; /* White background for a clean look */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 700px; /* Increased max-width for better layout */
+  margin: 30px auto; /* Center the component on the page */
+  font-family: 'Helvetica Neue', sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-out; /* Smooth fade-in effect on load */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.unlinked-duty-schedule h2 {
+  color: #FF9933; /* Saffron color for title */
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+}
+
+.unlinked-duty-schedule h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 5px;
+  background-color: #138808; /* Green underline */
+  margin: 8px auto 0;
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px; /* Spacing between input fields */
+  margin-bottom: 15px;
+}
+
+.unlinked-duty-schedule input {
+  width: 90%; /* Full width with some padding on sides */
+  padding: 10px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+  background-color: #f8f9fa; /* Light grey background for inputs */
+}
+
+.unlinked-duty-schedule input:focus {
+  border-color: #42a5f5; /* Blue border on focus */
+  outline: none;
+  box-shadow: 0 0 10px rgba(66, 165, 245, 0.3); /* Subtle blue shadow */
+}
+
+.unlinked-duty-schedule button {
+  padding: 10px 16px;
+  background-color: #138808; /* Green button color */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  width: 100%; /* Full width for button */
+}
+
+.unlinked-duty-schedule button:hover {
+  background-color: #0c7a4e; /* Darker green on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.handover-list {
+  margin-top: 20px;
+  position: relative;
+  animation: listFadeIn 1s ease-out;
+}
+
+@keyframes listFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.handover-list div {
+  background-color: #ffffff; /* White background for list items */
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  font-size: 0.9rem;
+  color: #2c3e50; /* Dark navy text color */
+}
+
+.handover-list div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  background-color: #e6f2ff; /* Slightly lighter blue on hover */
+}
+
+.handover-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.handover-list button {
+  background-color: #FF9933; /* Saffron color for buttons */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 6px 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: auto; /* Auto width for buttons */
+}
+
+.handover-list button:hover {
+  background-color: #e65c00; /* Darker saffron on hover */
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 600px) {
+  .unlinked-duty-schedule input {
+    width: 100%;
+  }
+
+  .handover-list div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .handover-buttons {
+    width: 100%; /* Full width on smaller screens */
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  .handover-list button {
+    width: 48%; /* Equal width for buttons on smaller screens */
+  }
+}

@@ -2,13 +2,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './LandingPage.css';
-import clickSound from '../assets/click-sound.mp3'; // Import the audio file
+// import clickSound from '../assets/click-sound.mp3'; // Import the audio file
 
-const LandingPage = () => {
-  const playSound = () => {
-    const audio = new Audio(clickSound);
-    audio.play();
-  };
+// const LandingPage = () => {
+//   const playSound = () => {
+//     const audio = new Audio(clickSound);
+//     audio.play();
+//   };
 
   return (
     <div className="landing-page">

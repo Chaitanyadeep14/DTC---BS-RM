@@ -15,7 +15,7 @@ const LandingPage = () => {
       <main className="landing-main">
         <div className="landing-buttons">
           {/* Button to Navigate to the Project Dashboard */}
-          <Link to="/dashboard" className="landing-button primary-button" onClick={playSound}>
+          <Link to="/dashboard" className="landing-button primary-button">
             Enter Dashboard
           </Link>
           {/* Additional Buttons */}
